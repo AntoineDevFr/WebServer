@@ -1,0 +1,61 @@
+<!-- 
+This file is part of PyFlaSQL.
+Original author: Raphael Viera (raphael.viera@emse.fr)
+License: check the LICENSE file.
+-->
+{% extends "base.html" %}
+{% block title %}SRIE{% endblock %}
+{% block content %}
+<div class="container p-5 my-5">
+    <!-- Main Title -->
+    <h1 class="text-center">Bienvenue dans le cours de sécurité web</h1>
+    <div class="container p-5 my-5 border">
+        <!-- Description -->
+        <p class="lead">
+            La sécurité web vise à protéger les systèmes, les données et les utilisateurs en ligne contre les menaces, les attaques et les vulnérabilités potentielles.
+            Dans ce cours, nous allons voir 3 des attaques les plus courantes sur le web.
+        </p>
+                
+        <p class="lead">
+            Nous allons utiliser PyFlaSQL qui est un outil efficace pour apprendre la sécurité web. Il est basé sur Flask, un framework web Python, avec SQLAlchemy pour gérer les bases de données.
+        </p>
+
+    </div>
+
+    <!-- Four steps section -->
+    <h2 class="mt-5 my-5 text-center">3 attaques web courantes et dévastatrices :</h2>
+
+    <div class="container p-5 my-5 border">
+        <ol class="list-group mt-5">
+            <li class="list-group-item">
+                <h5><a href="{{url_for('blueprint.srie_SQL_injection')}}" class="list-group-item-action">SQL Injection</a></h5>
+                <p class="lead">  L'injection SQL est un type d'attaque qui permet à l'attaquant d'extraire des informations 
+                    de base de données de l'application Web. Lorsque cela se produit, l'attaquant peut accéder à la base de données 
+                    et extraire des informations telles que les noms d'utilisateur, les mots de passe, les adresses e-mail, etc. 
+                    Dans le pire des cas, l'attaquant peut même modifier la base de données, ce qui peut conduire à une 
+                    compromission complète de l'application Web.
+                </p>
+            </li>
+            <li class="list-group-item">
+                <h5><a href="{{url_for('blueprint.srie_File_upload')}}" class="list-group-item-action">File Upload</a></h5>
+                <p class="lead">La vulnérabilité de l'upload de fichiers est une faille de sécurité qui permet à un attaquant de 
+                    télécharger des fichiers malveillants sur le serveur d'une application Web. En exploitant cette faille, l'attaquant 
+                    peut potentiellement exécuter des scripts nuisibles sur le serveur, compromettant ainsi l'intégrité du système. 
+                    Dans les cas les plus graves, cela peut conduire à une prise de contrôle complète du serveur, mettant en danger la confidentialité 
+                    des données stockées et la stabilité de l'application Web
+                </p>
+            </li>
+            <li class="list-group-item">
+                <h5><a href="{{url_for('blueprint.srie_Brut_Force')}}" class="list-group-item-action">Brute Force</a></h5>
+                <p class="lead">L'attaque par force brute, également connue sous le nom de « brute force », est une méthode d'attaque
+                     informatique où un attaquant tente de deviner un mot de passe en essayant de nombreuses combinaisons possibles jusqu'à 
+                     ce que la bonne soit trouvée. Dans le contexte de la sécurité web, une attaque par force brute peut compromettre l'accès
+                      à des comptes utilisateur en ligne en testant de manière itérative différentes combinaisons de noms d'utilisateur et de mots
+                       de passe, mettant ainsi en péril la confidentialité des données et la sécurité des comptes associés.
+                </p>
+            </li>
+        </ol>
+    </div>
+</div>
+{% endblock %}
+

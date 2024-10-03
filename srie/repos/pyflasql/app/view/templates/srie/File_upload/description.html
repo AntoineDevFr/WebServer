@@ -1,0 +1,27 @@
+<!-- 
+This file is part of PyFlaSQL.
+Original author: Raphael Viera (raphael.viera@emse.fr)
+License: check the LICENSE file.
+-->
+{% extends "base.html" %}
+{% block title %}SRIE > File Upload > Description{% endblock %}
+{% block content %}
+<div class="container p-5 my-5">
+    <h2 class="text-center">SRIE > File Upload > Description</h2>
+    <div class="container p-5 my-5 border bg-light">
+        <p class="lead">
+            Les vulnérabilités de téléchargement de fichiers surviennent lorsqu'un serveur Web permet aux utilisateurs de télécharger 
+            des fichiers sur son système de fichiers sans valider suffisamment des éléments tels que leur nom, leur type, leur contenu ou leur taille.<br><br>
+            Ne pas appliquer correctement les restrictions à ce sujet pourrait signifier que même une fonction de téléchargement 
+            d’images de base peut être utilisée pour télécharger des fichiers arbitraires et potentiellement dangereux. 
+            <br><br>
+            Si la validation du nom de fichier n'est pas effectuée correctement, cela pourrait potentiellement permettre à un attaquant d'écraser des fichiers cruciaux en téléchargeant un fichier portant le même nom. Dans le cas où le serveur est vulnérable à la traversée de répertoires, cela pourrait autoriser les attaquants à télécharger des fichiers dans des emplacements inattendus.
+            <br>Le fait de ne pas vérifier que la taille du fichier se situe dans les plages prévues pourrait également ouvrir la porte à une forme d'attaque par déni de service (DoS). Dans ce scénario, un attaquant pourrait exploiter cette vulnérabilité pour remplir l'espace disque disponible.
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+
+
+

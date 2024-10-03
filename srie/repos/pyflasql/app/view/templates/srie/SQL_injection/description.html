@@ -1,0 +1,33 @@
+<!-- 
+This file is part of PyFlaSQL.
+Original author: Raphael Viera (raphael.viera@emse.fr)
+License: check the LICENSE file.
+-->
+{% extends "base.html" %}
+{% block title %}SRIE > SQL Injection > Description{% endblock %}
+{% block content %}
+<div class="container p-5 my-5">
+    <h2 class="text-center">SRIE > SQL Injection > Description</h2>
+    <div class="container p-5 my-5 border bg-light">
+        <p class="lead">
+            L'injection SQL est un type d'attaque qui permet à l'attaquant d'extraire des informations de base de données de l'application Web.
+            Lorsque cela se produit, l'attaquant peut accéder à la base de données et extraire des informations telles que des noms d'utilisateur, des mots de passe, des adresses e-mail, etc.
+            Dans le pire des cas, l'attaquant peut même modifier la base de données, ce qui peut conduire à une compromission complète de l'application Web.<br><br>
+
+            Par exemple, si un site Web effectue une requête du type : <br>
+            <code>{% raw %} SELECT * FROM users WHERE username = 'input_username' AND password = 'input_password'; {% endraw %}</code> <br>
+            et que l'entrée utilisateur n'est pas nettoyée, l'attaquant peut injecter une requête SQL pour contourner l'authentification. <br><br>
+
+            Par exemple, si la saisie utilisateur est <code>admin' --</code>, la requête deviendra : <br>
+            <code class="p-5">{% raw %} SELECT * FROM users WHERE username = 'admin' --' AND password = 'input_password'; {% endraw %}</code>
+            Le <code>--</code> est utilisé pour commenter le reste de la requête.
+            La requête renverra le premier utilisateur dont le nom d'utilisateur est <code>admin</code> de la base de données. <br><br>
+            L'attaquant peut alors se connecter en tant qu'administrateur sans connaître le mot de passe.
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
